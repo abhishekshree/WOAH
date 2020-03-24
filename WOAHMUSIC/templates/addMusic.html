@@ -43,8 +43,8 @@
       <div class="sidebar-heading">Woah Music </div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light">Welcome Admin</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light disabled">Notifications </a>
-        <a href="./addMusic.html" class="list-group-item list-group-item-action bg-light">Add Music</a>
+        <a href="./admin.html" class="list-group-item list-group-item-action bg-light">Notifications </a>
+        <a href="#" class="list-group-item list-group-item-action bg-light disabled">Add Music</a>
         <a href="./viewChart.html" class="list-group-item list-group-item-action bg-light">View Music</a>
         </div>
     </div>
@@ -61,37 +61,23 @@
               </div>
             </div>
           </div>
-            <div class="alert alert-secondary">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4>I knew you were Trouble</h4>
-              <p>Submitted by Abhishek. Sung by Taylor Swift.
-                <p>
-                <button type="button" class="btn btn-success">Move to chart</button>
-                <button type="button" class="btn btn-danger">Drop song</button>
-              </p>
-            </div>
-
-            <div class="alert alert-secondary">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4>I knew you were Trouble</h4>
-              <p>Submitted by Abhishek. Sung by Taylor Swift.
-                <p>
-                <button type="button" class="btn btn-success">Move to chart</button>
-                <button type="button" class="btn btn-danger">Drop song</button>
-              </p>
-            </div><div class="alert alert-secondary">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4>I knew you were Trouble</h4>
-              <p>Submitted by Abhishek. Sung by Taylor Swift.
-                <p>
-                <button type="button" class="btn btn-success">Move to chart</button>
-                <button type="button" class="btn btn-danger">Drop song</button>
-              </p>
-            </div>
-
-
-
-
+            <div class="container">
+                <br><br>
+<form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Song's Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Singer's Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword" >
+    </div>
+  </div>
+<button type="submit" class="btn btn-primary">Add Music</button>
+</form>
         </main>
 <script src="../static/js/bootstrap.min.js"></script>
 </body>
