@@ -16,22 +16,22 @@
       <p>This is an attempt to create a classical model to create a music recommendation chart. This attempt with also focus on sorting music based solely on the will of the creator.
 Appearing globally, you can add music based of all genres for people to see and get good personalised playlist for themselves.
 </p>
-      <p><a class="btn btn-primary btn float-right" href="{{ url_for('login') }}" role="button">Admins Here &raquo;</a></p>
+      <a class="btn btn-primary btn float-right" href="{{ url_for('login') }}" role="button">Admins Here &raquo;</a>
     </div>
   </div>
 
   <div class="container">
   <h2>Hello there!</h2>
-  <form action="/action_page.php">
+  <form method="POST" action="{{ url_for('getData') }}">
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" id="email" placeholder="Enter song's title" name="email">
+        <input type="text" class="form-control" id="email" placeholder="Enter song's title" name="songname">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Enter singer's name" name="pswd">
+        <input type="text" class="form-control" placeholder="Enter singer's name" name="singer">
       </div>
     <div class="col">
-        <input type="text" class="form-control" placeholder="Enter your name" name="nameU">
+        <input type="text" class="form-control" placeholder="Enter your name" name="uname">
       </div>
     </div>
     <div class="form-group form-check">
@@ -57,21 +57,13 @@ Appearing globally, you can add music based of all genres for people to see and 
       </tr>
     </thead>
     <tbody>
+      {% for item in flist %}
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+        <td>{{item.Song}}</td>
+        <td>{{item.singer}}</td>
+        <td>{{item.givenby}}</td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+      {%endfor%}
     </tbody>
   </table>
 </div>

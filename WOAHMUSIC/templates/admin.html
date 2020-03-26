@@ -33,32 +33,20 @@
 {%block pagename%} Notifications {% endblock %}
 
 {%block content %}
-<div class="alert alert-secondary">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4>I knew you were Trouble</h4>
-              <p>Submitted by Abhishek. Sung by Taylor Swift.
-                <p>
-                <button type="button" class="btn btn-success">Move to chart</button>
-                <button type="button" class="btn btn-danger">Drop song</button>
-              </p>
-            </div>
 
-            <div class="alert alert-secondary">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4>I knew you were Trouble</h4>
-              <p>Submitted by Abhishek. Sung by Taylor Swift.
+{%for rec in recommendations%}
+<div class="alert alert-secondary ">
+              <a type="button" class="close" data-dismiss="alert" href="{{ url_for('drop_song', id = rec.id) }}" aria-hidden="true">×</a>
+              <h4>{{ rec.Song_name }}</h4>
+              <p>Singer: {{ rec.Singer_name}} <br>
+                Submitterd by : {{rec.rec_name}}
+                <br>
+                Song id: {{rec.id}}
                 <p>
-                <button type="button" class="btn btn-success">Move to chart</button>
-                <button type="button" class="btn btn-danger">Drop song</button>
-              </p>
-            </div><div class="alert alert-secondary">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4>I knew you were Trouble</h4>
-              <p>Submitted by Abhishek. Sung by Taylor Swift.
-                <p>
-                <button type="button" class="btn btn-success">Move to chart</button>
-                <button type="button" class="btn btn-danger">Drop song</button>
+                <a class="btn btn-success" href="{{ url_for('to_chart', id = rec.id) }}" role="button">Add to chart</a>
+                  <a class="btn btn-danger" href="{{ url_for('drop_song', id = rec.id) }}" role="button">Drop Song</a>
               </p>
             </div>
+{%endfor%}
 
 {%endblock%}

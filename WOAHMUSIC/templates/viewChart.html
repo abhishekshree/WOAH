@@ -35,27 +35,25 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Song</th>
         <th>Singer</th>
         <th>Submitted By</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
+      {%for f in final%}
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+        <td>{{ f.id}}</td>
+        <td>{{f.Song}}</td>
+        <td>{{f.singer }}</td>
+        <td>{{ f.givenby }}</td>
+        <td>
+          <a class="btn btn-danger" href="{{ url_for('delete', id = f.id) }}" role="button">Delete</a>
+        </td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
