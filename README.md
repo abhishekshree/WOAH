@@ -3,7 +3,7 @@ This is an attempt to create a classical model to create a music recommendation 
 Appearing globally, you can add music based of all genres for people to see and get good personalised playlist for themselves.
 #### This app is created using:
 1.Flask <br>
-2.Spotify Music <br> 3.VueJS <br> 4.NoSQL <br> 5.Bootstrap
+2.Spotify Music <br> 3.VueJS <br> 4.SQLite <br> 5.Bootstrap
 
 
 ##### Created by : Abhishek Shree
