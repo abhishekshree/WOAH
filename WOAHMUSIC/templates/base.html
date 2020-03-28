@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>| Administration |</title>
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <style>
-        {%block style %} {%endblock%}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>| Administration |</title>
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <style>
+    {% block style %}
+      {%endblock%}
+      
+  </style>
 </head>
 
 <body>
+  
 
-    <div class="container-fluid ">
-      <div class="row">
-        <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Woah Music </div>
-      <div class="list-group list-group-flush">
-        <a href="{{ url_for('main') }}" class="list-group-item list-group-item-action bg-light">Welcome Admin</a>
-        <a href="{{ url_for('admin') }}" class="list-group-item list-group-item-action bg-light">Notifications </a>
-        <a href="{{ url_for('add_music') }}" class="list-group-item list-group-item-action bg-light">Add Music</a>
-        <a href="{{ url_for('view_chart') }}" class="list-group-item list-group-item-action bg-light">View Music</a>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <nav id="sidebar">
+        <div class="sidebar-heading">Woah Music </div>
+        <div class="list-group list-group-flush">
+          <a href="#" class="list-group-item list-group-item-action bg-light disabled">Welcome Admin</a>
+          <a href="{{ url_for('admin') }}" class="list-group-item list-group-item-action bg-light">Notifications </a>
+          <a href="{{ url_for('add_music') }}" class="list-group-item list-group-item-action bg-light">Add Music</a>
+          <a href="{{ url_for('view_chart') }}" class="list-group-item list-group-item-action bg-light">View Music</a>
+          <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-light">Logout</a>
         </div>
-    </div>
-
-        <main role="main" class="col-lg-10 col-md-8 ml-sm-auto px-4 ">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">{%block pagename%}{%endblock%}</h1>
-            <div class="btn-toolbar mb-3 mb-md-0">
-              <div class="btn-group mr-3">
-                <a class="btn btn-sm btn-outline-secondary" href="{{url_for('add_music')}}">Add</a>
-                <a class="btn btn-sm btn-outline-secondary" href="{{url_for('view_chart')}}">View</a>
-                <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('logout') }}">Logout</a>
-              </div>
+        </nav>
+      </div>
+      <main role="main" class="col-lg-10 col-md-8 px-4">
+        <div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center m-2 pt-2 pb-1 mb-2 border-bottom">
+          <h1 class="h2">{%block pagename%}{%endblock%}</h1>
+          
+          <div class="btn-toolbar mb-4 mb-md-0 ">
+            <div class="btn-group mr-4">
+              <a class="btn btn-sm btn-outline-secondary" href="{{url_for('admin')}}">Menu</a>
+              <a class="btn btn-sm btn-outline-secondary" href="{{url_for('add_music')}}">Add</a>
+              <a class="btn btn-sm btn-outline-secondary" href="{{url_for('view_chart')}}">View</a>
+              <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('logout') }}" >Logout</a>
             </div>
           </div>
-            {%block content %} {%endblock%}
 
-        </main>
-      </div>
-<script src="../static/js/bootstrap.min.js"></script>
+        </div>
+        {%block content %} {%endblock%}
+
+      </main>
+    </div>
+  </div>
+  <script src="../static/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

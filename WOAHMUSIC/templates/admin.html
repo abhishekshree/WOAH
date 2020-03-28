@@ -33,7 +33,7 @@
 {%block pagename%} Notifications {% endblock %}
 
 {%block content %}
-
+<div class="container">
 {%for rec in recommendations%}
 <div class="alert alert-secondary ">
               <a type="button" class="close" data-dismiss="alert" href="{{ url_for('drop_song', id = rec.id) }}" aria-hidden="true">×</a>
@@ -48,5 +48,5 @@
               </p>
             </div>
 {%endfor%}
-
+</div>
 {%endblock%}
